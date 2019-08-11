@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+<style>
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+    .player__controls{
+        background-color: rgba(228, 117, 117, 0.445);
+    }
+    .progress{
+        flex: 10;
+        position: relative;
+  background-color: #ddd;
+  flex-basis: 100%;
+  transition: height 0.3s;
+  display: flex;
+  cursor: pointer;
+    }
+    .progress__filled{
+  width: 50%;
+  flex: 0;
+  flex-basis: 50%;
+  background-color: #4CAF50;
+    }
+    .player:hover .progress{
+        height: 15px;
+    }
+    .player{
+        width: 100%;
+        height: 40%;
+    }
+    video{
+        width: 80%;
+    }
+</style>
+<body>
+    <div class="player">
+        <video src="TimothyPabifioandBenBekantoy-AfrobeatMashUp.mp4" class="player__video viewer" autoplay>
+        </video>
+   <div class="player__controls">
+       <div class="progress">
+           <div class="progress__filled"></div>
+       </div>
+       <button class="player__button toggle" title="togglePlay"><i class="fa fa-play"></i></button>
+       <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+       <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+       <button data-skip="-10" class="player__button">◀10s</button>
+       <button class="player_button" data-skip="25">25s⏩</button>
+    </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
